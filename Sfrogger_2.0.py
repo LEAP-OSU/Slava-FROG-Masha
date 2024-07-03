@@ -27,13 +27,13 @@ import gc
 import warnings
 warnings.filterwarnings("ignore")
 from PCGPA import width, remove_phase_jumps
-
+#"\\Qt\\FROG_GUI2.1.ui"
 
 class FROG_class(QtWidgets.QMainWindow):
     def __init__(self):
         self.app=QtWidgets.QApplication(sys.argv)
         super(FROG_class, self).__init__()
-        uic.loadUi(Path+"\\Qt\\FROG_GUI2.1.ui", self)
+        uic.loadUi(Path+"/Qt/FROG_GUI2.1.ui", self)
         self.show()
         
         #add frog types
