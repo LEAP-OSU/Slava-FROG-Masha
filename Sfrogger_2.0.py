@@ -1,10 +1,12 @@
 """FROG reconstraction with Qt GUI
 v2.0 @ Vyacheslav Leshchenko 2024
-
 """
 import time     
 import os
 import sys
+QT_DEBUG_PLUGINS=1
+#print(os.environ[QT_DEBUG_PLUGINS ])
+
 Path=os.path.dirname((os.path.abspath(__file__)))
 sys.path.append(Path)
 from PyQt5 import QtWidgets
