@@ -340,6 +340,7 @@ class FROG_class(QtWidgets.QMainWindow):
         #try:
         (self.Results['T_load'],self.Results['W_load'],self.Results['frog_load'])=PCGPA.load_frog(self.Args['frog_file'])
         self.Results['T']=self.Results['T_load']
+        print(self.Results['T'])
         ind=self.Results['frog_load']<0
         self.Results['frog_load'][ind]=0
         M=self.Results['frog_load'].max()
@@ -351,6 +352,7 @@ class FROG_class(QtWidgets.QMainWindow):
             self.Results['frog_in_0']=self.Results['frog_in']
         
         self.Results['W']=np.copy(self.Results['W_load'])
+        print(self.Results['W'])
         if self.checkmaxwavelength.isChecked() or self.checkminwavelength.isChecked():
             self.set_wavelength_delay()
         self.remove_bkg()

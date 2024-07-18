@@ -464,8 +464,11 @@ def resize_frog(T,W,frog,Nbin,Nmax):
 #    print(Iw0,Iw1)
     
     Nbin0=2*Pi/dt0/dw0
+    print('Nbin0')
+    print(Nbin0)
     if np.log2(Nbin0)%1:
-        Nbin=int(2**(np.floor(np.log2(Nbin0))+1)) #increase the number of points to the nearest 2**? value
+        #Nbin=int(2**(np.floor(np.log2(Nbin0))+1)) #increase the number of points to the nearest 2**? value
+        Nbin=int(2**(np.floor(np.log2(abs(Nbin0)))+1))
     else:
         Nbin=Nbin0
     if Nbin > 2**Nmax:
