@@ -285,6 +285,7 @@ def load_frog(file):
     
     if file[-3:]=='txt' or file[-3:]=='dat':
         """for program generated frogs (basically for test purposes)"""
+        print("loading .txt or.dat file")
         try:
             T0=open(file,'r').readline()
             T=np.fromstring(T0,sep='\t')
@@ -353,6 +354,7 @@ def load_frog(file):
     elif file[-6:]=='pyfrog':
         """for files saved by akvlXFROG_txt soft directly
         or by the catchFROG py software"""
+        print("loading pyfrog")
         try:
             F=open(file,'r')
             F.readline()
@@ -440,35 +442,46 @@ def resize_frog(T,W,frog,Nbin,Nmax):
     #determine size
     Int_t=np.sum(frog,axis=1)
     Int_w=np.sum(frog,axis=0)
-#    print(len(T),len(Int_t),len(Int_w))
-#    plt.plot(T,Int_t)
-#    plt.show()
-#    plt.plot(Int_w)
-#    plt.show()
+    # print(len(T),len(Int_t),len(Int_w))
+    # plt.plot(T,Int_t)
+    # plt.show()
+    # plt.plot(Int_w)
+    # plt.show()
     E_part=0.9 #level to equalize size
     
     Et=np.sum(Int_t)
+    print("Et")
+    print(Et)
     It0=1
     while np.sum(Int_t[:It0]) < Et*E_part : It0 += 1
     It1=len(Int_t)
     while np.sum(Int_t[It1:]) < Et*E_part : It1 -= 1
     dt0=(T[It0]-T[It1])/Nbin
-#    print(It0,It1)
+    print("Nbin")
+    print(Nbin)
+    #print("T[It0], T[It1]")
+    #print(T[It0],T[It1])
     
     Ew=np.sum(Int_w)
+    print('Ew')
+    print(Ew)
     Iw0=1
     while np.sum(Int_w[:Iw0]) < Ew*E_part : Iw0 += 1
     Iw1=len(Int_w)
     while np.sum(Int_w[Iw1:]) < Ew*E_part : Iw1 -= 1
     dw0=(W[Iw0]-W[Iw1])/Nbin
-#    print(Iw0,Iw1)
-    
+    print(Iw0, Iw1)
+    print("W[Iw0], W[Iw1]")
+    print(W[Iw0],W[Iw1])
+
     Nbin0=2*Pi/dt0/dw0
+    print("dt0, dw0")
+    print(dt0, dw0)
     print('Nbin0')
     print(Nbin0)
     if np.log2(Nbin0)%1:
         #Nbin=int(2**(np.floor(np.log2(Nbin0))+1)) #increase the number of points to the nearest 2**? value
-        Nbin=int(2**(np.floor(np.log2(abs(Nbin0)))+1))
+        Nbin=int(2**(np.floor(np.log2(Nbin0))+1))
     else:
         Nbin=Nbin0
     if Nbin > 2**Nmax:

@@ -265,7 +265,7 @@ class FROG_class(QtWidgets.QMainWindow):
             self.delay_correction.setEnabled(False)
         self.set_delaycorrection()
         self.Results['frog_in_processed?']=False
-                
+        
     def bkgsubtract_click(self):
         if self.check_bkgsubtract.isChecked():
             self.bkg.setEnabled(True)
@@ -304,7 +304,6 @@ class FROG_class(QtWidgets.QMainWindow):
         self.Results['frog_in'][ind]=0
         M=self.Results['frog_in'].max()
         self.Results['frog_in']=self.Results['frog_in']/M
-    
             
     def symmetry_click(self):
         if self.check_symmetry.isChecked():
@@ -340,7 +339,6 @@ class FROG_class(QtWidgets.QMainWindow):
         #try:
         (self.Results['T_load'],self.Results['W_load'],self.Results['frog_load'])=PCGPA.load_frog(self.Args['frog_file'])
         self.Results['T']=self.Results['T_load']
-        print(self.Results['T'])
         ind=self.Results['frog_load']<0
         self.Results['frog_load'][ind]=0
         M=self.Results['frog_load'].max()
@@ -352,14 +350,12 @@ class FROG_class(QtWidgets.QMainWindow):
             self.Results['frog_in_0']=self.Results['frog_in']
         
         self.Results['W']=np.copy(self.Results['W_load'])
-        print(self.Results['W'])
         if self.checkmaxwavelength.isChecked() or self.checkminwavelength.isChecked():
             self.set_wavelength_delay()
         self.remove_bkg()
         if self.check_symmetry.isChecked():
             self.symmetry_click()
         gc.collect()
-    
     
     def transpose_frog(self):
         if not self.Args['frog_file'] == '':
@@ -392,8 +388,8 @@ class FROG_class(QtWidgets.QMainWindow):
         
         dy=Y[1]-Y[0]
         dx=X[1]-X[0]
+        print(X.min(), Y.min(), X.max(), Y.max())
         img.setRect(X.min(), Y.min() ,X.max()-X.min(),Y.max()-Y.min())
-        
 
         win.resize(S*0.99)
         scene.addWidget(win)
@@ -470,6 +466,8 @@ class FROG_class(QtWidgets.QMainWindow):
             #preprocess
             if not self.Args['frog_file'][-3:]=='frg' and (not self.Args['frog_file'][-4:]=='frog' or self.Args['frog_file'][-6:]=='pyfrog') and not self.Results['frog_in_processed?']:
                 """resize frog"""
+                #print(len(self.Results['frog_in_0']))
+                #print(len(self.Results['T']))
                 self.set_delaycorrection()
                 self.set_wavelength_delay()
                 (self.Results['T'],self.Results['W'],self.Results['frog_in_0'])=PCGPA.resize_frog(
@@ -478,6 +476,9 @@ class FROG_class(QtWidgets.QMainWindow):
                                 self.Args['max size'])
                 #*1.3 might be a bit too small for pulses with very large chirp, so be careful (and modify if necessary)
                 self.remove_bkg()
+                #print('pre-process')
+                #np.savetxt("self.Results_frog_in_0.dat", self.Results['frog_in_0'])
+                #print(self.Results['T'])
                 self.showFROGex()
             
             if self.Args['type'] == 'SHG-FROG':

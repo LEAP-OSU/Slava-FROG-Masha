@@ -11,7 +11,7 @@ FROG_path=r"example\24.4.txtSpecScan"
 
 T, W, frog=load_frog(r"C:/Users/ichth/OneDrive/Desktop/Chini Lab/Slava-FROG/example/24.4.txtSpecScan")
 T,W,frog=preprocess_frog(T,W,frog)
-
+resize_frog(T, W, frog, )
 Nbin=4
 #determine size
 Int_t=np.sum(frog,axis=1)
