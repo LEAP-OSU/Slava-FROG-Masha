@@ -472,7 +472,7 @@ def resize_frog(T,W,frog,Nbin,Nmax):
     dw0=(W[Iw0]-W[Iw1])/Nbin
     print(Iw0, Iw1)
     print("W[Iw0], W[Iw1]")
-    print(W[Iw0],W[Iw1])
+    print(W[Iw0], W[Iw1])
 
     Nbin0=2*Pi/dt0/dw0
     print("dt0, dw0")
@@ -564,7 +564,6 @@ def TBP_frog(T,W,frog):
     #print(W0)
     
     return T0*W0
-
 
 def PCGPA_reconstruct_SHG(T,W,frog,G_goal=10**-3,MaxStep=50,SpecFund=[],
                           keep_fundspec=False,MuliGrid=False,Type='SHG-FROG'):
