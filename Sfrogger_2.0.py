@@ -210,7 +210,6 @@ class FROG_class(QtWidgets.QMainWindow):
                 self.showFROGex()
         self.Results['frog_in_processed?']=False   
         
-
     def maxwavelength_click(self):
         if self.checkmaxwavelength.isChecked():
             self.maxwavelength.setEnabled(True)            
@@ -423,8 +422,6 @@ class FROG_class(QtWidgets.QMainWindow):
         win.resize(S*0.99)
         scene.addWidget(win)
         View.setScene(scene)
-        
-
     
     def showerror(self,error):
         self.error_message.setPlaceholderText(error.Message)   
@@ -566,8 +563,7 @@ class FROG_class(QtWidgets.QMainWindow):
                     
             self.showresults()
             self.progressBar.setValue(self.Args['ret_iterations'])
-            
-            
+               
     def preprocess(self):
         """preprocess with multi-grid algorithm"""
         Max_population=16;
@@ -795,7 +791,6 @@ class FROG_class(QtWidgets.QMainWindow):
                                   np.abs(pulse_TL.reshape((-1,1)))**2/MTL),axis=1),
                                   header='time fs \t Intensity a.u.',delimiter='\t',comments='')
                   
-    
     def savespectrum(self,file):
         if type(file) == bool:
             file=QtWidgets.QFileDialog.getSaveFileName(self)[0]

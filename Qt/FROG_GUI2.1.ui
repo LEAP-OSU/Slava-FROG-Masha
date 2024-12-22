@@ -3,13 +3,13 @@
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="windowModality">
-   <enum>Qt::NonModal</enum>
+   <enum>Qt::WindowModality::NonModal</enum>
   </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1025</width>
+    <width>1030</width>
     <height>757</height>
    </rect>
   </property>
@@ -43,7 +43,7 @@
          <string>fundamental spectrum (optional)</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -60,7 +60,7 @@
          <string>FROG trace</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -221,7 +221,7 @@
     <item>
      <widget class="QSplitter" name="splitter">
       <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <enum>Qt::Orientation::Horizontal</enum>
       </property>
       <widget class="QWidget" name="layoutWidget">
        <layout class="QGridLayout" name="gridLayout_8">
@@ -241,7 +241,7 @@
            <string>Reconstracted FROG</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -251,7 +251,7 @@
            <string>Experimental FROG</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -261,7 +261,7 @@
         <item row="4" column="0">
          <widget class="QCheckBox" name="check_logscale">
           <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
+           <enum>Qt::LayoutDirection::LeftToRight</enum>
           </property>
           <property name="text">
            <string>log scale</string>
@@ -281,7 +281,7 @@
            <string>Time</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -291,7 +291,7 @@
            <string>Spectrum</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -317,7 +317,7 @@
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;FROG type&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="textFormat">
-             <enum>Qt::RichText</enum>
+             <enum>Qt::TextFormat::RichText</enum>
             </property>
            </widget>
           </item>
@@ -388,7 +388,7 @@
            <string>errors</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -531,13 +531,13 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="2" alignment="Qt::AlignVCenter">
+          <item row="0" column="2" alignment="Qt::AlignmentFlag::AlignVCenter">
            <widget class="QLabel" name="label_8">
             <property name="text">
              <string>goal G error</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -547,7 +547,7 @@
              <string>max Number of steps</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -592,7 +592,7 @@
              <string>max array size 2**</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -615,7 +615,7 @@
              <number>6</number>
             </property>
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="value" stdset="0">
              <double>0.000000000000000</double>
@@ -639,17 +639,17 @@
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&amp;tau; FWHM fs &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLCDNumber" name="duration">
             <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
+             <enum>QFrame::Shadow::Plain</enum>
             </property>
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="value" stdset="0">
              <double>1.000000000000000</double>
@@ -659,7 +659,7 @@
           <item row="1" column="1">
            <widget class="QLCDNumber" name="duration_tl">
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="value" stdset="0">
              <double>1.000000000000000</double>
@@ -681,7 +681,7 @@
              <string>W FWHM nm</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -700,7 +700,7 @@
              <string>W step nm</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -721,7 +721,7 @@
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&amp;tau; trans.lim. fs &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -740,7 +740,7 @@
              <number>6</number>
             </property>
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="value" stdset="0">
              <double>0.000000000000000</double>
@@ -764,14 +764,14 @@
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&amp;tau; step fs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
           <item row="3" column="1">
            <widget class="QLCDNumber" name="Tstep">
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="value" stdset="0">
              <double>1.000000000000000</double>
@@ -792,14 +792,14 @@
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;τ e^-2 fs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
           <item row="3" column="0">
            <widget class="QLCDNumber" name="duration_e">
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="intValue" stdset="0">
              <number>1</number>
@@ -825,7 +825,7 @@
              <string>reconstr. step</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -841,7 +841,7 @@
              <string>recons. error (G)</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -857,14 +857,14 @@
              <string>passed time sec</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLCDNumber" name="step">
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="value" stdset="0">
              <double>1.000000000000000</double>
@@ -886,7 +886,7 @@
              <number>7</number>
             </property>
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="value" stdset="0">
              <double>0.000000000000000</double>
@@ -902,7 +902,7 @@
              <number>4</number>
             </property>
             <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
+             <enum>QLCDNumber::SegmentStyle::Flat</enum>
             </property>
             <property name="value" stdset="0">
              <double>0.000000000000000</double>
@@ -937,7 +937,7 @@
              <string>progress (steps)</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
             <property name="indent">
              <number>0</number>
@@ -1000,8 +1000,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1025</width>
-     <height>22</height>
+     <width>1030</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menufile">
